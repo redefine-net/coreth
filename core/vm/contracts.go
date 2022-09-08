@@ -149,12 +149,14 @@ func init() {
 	for k := range PrecompiledContractsApricotPhase6 {
 		PrecompiledAddressesApricotPhase6 = append(PrecompiledAddressesApricotPhase6, k)
 	}
+
 	// Set of all native precompile addresses that are in use
 	// Note: this will repeat some addresses, but this is cheap and makes the code clearer.
 	PrecompileAllNativeAddresses = make(map[common.Address]struct{})
 	addrsList := append(PrecompiledAddressesHomestead, PrecompiledAddressesByzantium...)
 	addrsList = append(addrsList, PrecompiledAddressesIstanbul...)
 	addrsList = append(addrsList, PrecompiledAddressesApricotPhase2...)
+	addrsList = append(addrsList, PrecompiledAddressesApricotPhase6...)
 	for _, k := range addrsList {
 		PrecompileAllNativeAddresses[k] = struct{}{}
 	}

@@ -135,12 +135,6 @@ type callTracerTest struct {
 	Result       *callTrace      `json:"result"`
 }
 
-// Iterates over all the input-output datasets in the tracer test harness and
-// runs the JavaScript tracers against them.
-func TestCallTracerLegacy(t *testing.T) {
-	testCallTracer("callTracerLegacy", "call_tracer_legacy", t)
-}
-
 func TestCallTracerNative(t *testing.T) {
 	testCallTracer("callTracer", "call_tracer", t)
 }
